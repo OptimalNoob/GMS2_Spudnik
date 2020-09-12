@@ -16,3 +16,4 @@ dialog[# 0,0] = [ //
 dialog[# 1,0] = [
 	"This is some text in the second flag. \n\nIt only has 1 line of text."
 ];
+

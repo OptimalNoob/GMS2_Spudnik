@@ -1,6 +1,6 @@
 /// @desc
 hp=12
-atk=7
+atk=8
 def=2
 spd=3
 
