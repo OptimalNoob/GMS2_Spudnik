@@ -47,6 +47,7 @@
     {"id":{"name":"sndItem_usePotion","path":"sounds/sndItem_usePotion/sndItem_usePotion.yy",},"order":8,},
     {"id":{"name":"sSystem_DebugDrawer","path":"sprites/sSystem_DebugDrawer/sSystem_DebugDrawer.yy",},"order":8,},
     {"id":{"name":"tsSnow01","path":"tilesets/tsSnow01/tsSnow01.yy",},"order":5,},
+    {"id":{"name":"Quests","path":"scripts/Quests/Quests.yy",},"order":8,},
     {"id":{"name":"tsInterior01","path":"tilesets/tsInterior01/tsInterior01.yy",},"order":2,},
     {"id":{"name":"oApple01_battle","path":"objects/oApple01_battle/oApple01_battle.yy",},"order":0,},
     {"id":{"name":"oGoop01_battle","path":"objects/oGoop01_battle/oGoop01_battle.yy",},"order":1,},
