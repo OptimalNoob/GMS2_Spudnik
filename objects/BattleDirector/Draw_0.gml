@@ -1,4 +1,5 @@
 /// @desc
+if(debugMode) draw_self();
 if(current_turn = turn.player && current_menu = pMenu.attack){
 	draw_set_color(c_red);
 	draw_set_alpha(0.3);

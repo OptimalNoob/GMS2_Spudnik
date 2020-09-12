@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sSystem_EnemyParent",
+    "path": "sprites/sSystem_EnemyParent/sSystem_EnemyParent.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

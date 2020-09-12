@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sSystem_DebugDrawer",
+    "path": "sprites/sSystem_DebugDrawer/sSystem_DebugDrawer.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

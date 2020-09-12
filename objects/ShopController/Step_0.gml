@@ -1,4 +1,5 @@
 /// @desc
+
 get_player_input();
 shop_inventory_length = ds_list_size(shop_inventory);
 if(!confirm_buy){

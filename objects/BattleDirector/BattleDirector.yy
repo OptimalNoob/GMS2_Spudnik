@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sSystem_BattleDirector",
+    "path": "sprites/sSystem_BattleDirector/sSystem_BattleDirector.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

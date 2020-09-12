@@ -1,4 +1,5 @@
-/// @desc
+/// @
+if(debugMode) draw_self();
 var coll_color = c_white;
 if (instance_exists(oSpud)) {
 	with (oSpud){

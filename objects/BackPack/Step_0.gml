@@ -1,4 +1,5 @@
 /// @desc
+
 if(input_SELECT || input_START){
 	audio_play_sound(sndBP_close,10,0);
 	paused = false;
