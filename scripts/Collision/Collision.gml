@@ -27,10 +27,14 @@ function collide_with_npc(_range){
 
 function collide_with_warp(_warp){
 	_warp = instance_place(x,y,Warp);
-	if (_warp != noone) {
+	if (_warp != noone && !warping) {
+		paused = true;
+		warping = true;
+		alarm[0] = 60;
+		show_debug_message("Warp");
 		room_persistent = false;
 		spud_spawn_x = _warp.spud_x;
 		spud_spawn_y = _warp.spud_y;
-		room_goto(_warp.target_room);
 	};
+	return _warp;
 };

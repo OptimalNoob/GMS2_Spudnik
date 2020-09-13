@@ -1,5 +1,5 @@
 /// @desc
-battle_count = irandom_range(1,5);
+battle_count = irandom_range(1,2);
 battle_list = ds_list_create();
 var xx = 0; repeat(battle_count){
 	var rand_enemy = library_enemies[# 10, irandom(1)];

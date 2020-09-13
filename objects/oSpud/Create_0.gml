@@ -5,3 +5,6 @@ run_speed = 1.2;
 range = 32;
 x = spud_spawn_x;
 y = spud_spawn_y;
+paused = false;
+
+warping = false;

@@ -13,7 +13,9 @@ show_debug_message("Mouse("
 + string(device_mouse_y_to_gui(0)) + ")");
 
 
-if(ds_list_empty(enemy_IDs)){
+if(ds_list_empty(enemy_IDs)){ //END BATTLE
+	ds_list_copy(QuestDirector.return_battle_list, battle_spawn_table);
+	event_battle = true;
 	ds_list_destroy(enemy_IDs);
 	ds_list_clear(battle_spawn_table);
 	room_goto(room_debug);

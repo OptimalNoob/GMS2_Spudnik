@@ -9,7 +9,7 @@ function build_quests(){
 			0,
 			"Cornovich has asked you to clear out some slimes from the neighboring area",
 			[0,0],
-			["Go to the Forest", "Kill 3 Slimes", "Return to Cornovich"]
+			["Go to the Winterland", "Kill 3 Slimes", "Return to Cornovich"]
 		],
 	];
 	library_quests = ds_grid_create_from_array(quest_array);
@@ -40,32 +40,49 @@ function ds_grid_create_from_array(_array){
 };
 
 #region QUEST LISTENERS
-///@func listener_npc();
+
+///@func listen_npc();
 ///@desc Listens to Player talking to NPCs
-function listener_npc(){
+function listen_npc(){
 	
 };
-///@func listener_enemy_kill();
+
+///@func listen_battle();
 ///@desc Listens to Player completing a battle and counting specified enemy
-function listener_enemy_kill(){
-	
+function listen_battle(){
+
 };
-///@func listener_room_tran();
+
+///@func listen_tran();
 ///@desc Listens to Player transitioning to another room
-function listener_room_tran(){
+function listen_tran(_warpid){
+	var targ_room = _warpid.target_room;
+	return targ_room;
+};
+///@func listen_purchase();
+///@desc Listens to Player transitioning to another room
+function listen_purchase(){
 	
 };
 
-//function listener_npc(){
+///@func listen_use_item();
+///@desc Listens to Player transitioning to another room
+function listen_use_item(){
 	
-//};
-
-//function listener_npc(){
-	
-//};
+};
 
 #endregion
-
+function count_enemies(_enemyID){
+	var enemycount = 0;
+	var i = 0; repeat(ds_list_size(return_battle_list)){
+		var enemy_row = ds_grid_value_y(library_enemies,10,0,10,ds_grid_height(library_enemies)-1, return_battle_list[|i]);
+		var enemy_id = library_enemies[# enemy_col.enemyID, enemy_row];
+		if(enemy_id = _enemyID) enemycount++;
+		i++;
+	};
+	//ds_list_clear(return_battle_list);
+	return enemycount;
+};
 
 function quest_activate(_questID){
 	var quest_row = ds_grid_value_y(library_quests, 0, 0, 0, ds_grid_height(library_quests) - 1, _questID);
@@ -74,7 +91,11 @@ function quest_activate(_questID){
 	ds_list_insert(spud_quests, 0, _questID);
 };
 
-function quest_update(_questID, ){
-	quest_notif = update_quest.activate;
-	ds_list_insert(spud_quests, 0, _questID);
+function quest_update(){
+	quest_notif = update_quest.update;
+};
+
+function quest_progress(_questID){
+	var quest_row = ds_grid_value_y(library_quests, 0, 0, 0, ds_grid_height(library_quests) - 1, _questID);
+	library_quests[# quest_col.obj_flag, quest_row][0] += 1;
 };

@@ -8,8 +8,15 @@ function build_globals(){
 	globalvar npc_flags;
 	globalvar library_items;
 	globalvar library_enemies;
-	globalvar battle_spawn_table;
 	globalvar library_quests;
+	globalvar battle_spawn_table;
+	
+	globalvar event_npc;
+	globalvar event_tran;
+	globalvar event_battle;
+	globalvar event_purchase;
+	globalvar event_use_item;
+	globalvar listen_warp;
 	
 	camX = 0;
 	camY = 0;
@@ -19,6 +26,12 @@ function build_globals(){
 	noclipMode = false;
 	npc_flags = ds_list_create();
 	battle_spawn_table = ds_list_create();
+	event_npc = false;
+	event_tran = false;
+	event_battle = false;
+	event_purchase = false;
+	event_use_item = false;
+	return_room = 0;
 };
 
 function build_player_globals() {
@@ -35,7 +48,7 @@ function build_player_globals() {
 	spud_quests = ds_list_create();
 	ds_list_add(player_inventory, "0001","0001","0004");
 	spud_hp = 10;
-	spud_atk = 3;
+	spud_atk = 999;
 	spud_max_hp = 1000;
 	spud_money = 123456789;
 	spud_spawn_x = 328;

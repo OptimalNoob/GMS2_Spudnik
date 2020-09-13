@@ -16,7 +16,8 @@ vsp = move_v * move_speed / sqrt(abs(move_v) + abs(move_h) + .1);
 
 if(!noclipMode) collide_with_object(Collider);
 collide_with_npc(range);
-collide_with_warp(Warp);
+listen_warp = collide_with_warp(Warp);
+if(listen_warp != noone) event_tran = true;
 
 x += hsp;
 y += vsp;

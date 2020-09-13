@@ -52,11 +52,7 @@ per script check.
 				questFinish(); //some kind of code for giving out rewards, although probably not in a separate function like this
 			}
 		}
-		
 	}
-	
-	
-	
 }
 
 

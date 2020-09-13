@@ -18,7 +18,7 @@ inv_sel_item = 0;
 att_sel_enem = 0;
 spc_sel_item = 0;
 com_sel_item = 0;
-
+listen_enemy_count = 0;
 
 
 #region PLAYER MENU INIT
