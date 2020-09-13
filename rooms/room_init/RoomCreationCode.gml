@@ -6,6 +6,7 @@ build_flags();
 build_library_items();
 build_library_enemies();
 load_sounds();
+build_quests();
 randomize();
 
 // Finish Init

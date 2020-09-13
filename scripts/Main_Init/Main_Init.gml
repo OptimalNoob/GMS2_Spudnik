@@ -9,6 +9,7 @@ function build_globals(){
 	globalvar library_items;
 	globalvar library_enemies;
 	globalvar battle_spawn_table;
+	globalvar library_quests;
 	
 	camX = 0;
 	camY = 0;
