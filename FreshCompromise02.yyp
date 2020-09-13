@@ -70,6 +70,7 @@
     {"id":{"name":"NPCParent","path":"objects/NPCParent/NPCParent.yy",},"order":4,},
     {"id":{"name":"Collision","path":"scripts/Collision/Collision.yy",},"order":1,},
     {"id":{"name":"sBroc_idle","path":"sprites/sBroc_idle/sBroc_idle.yy",},"order":1,},
+    {"id":{"name":"TestQuest","path":"scripts/TestQuest/TestQuest.yy",},"order":9,},
     {"id":{"name":"sSystem_Camera","path":"sprites/sSystem_Camera/sSystem_Camera.yy",},"order":6,},
     {"id":{"name":"room_snow","path":"rooms/room_snow/room_snow.yy",},"order":5,},
     {"id":{"name":"Collider","path":"objects/Collider/Collider.yy",},"order":1,},
