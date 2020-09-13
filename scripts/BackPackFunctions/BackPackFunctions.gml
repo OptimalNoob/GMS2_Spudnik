@@ -1,3 +1,25 @@
+#region CONTROLS
+
+function control_inventory(){
+	var inventory_max = ds_list_size(player_inventory) - 1;
+	if(input_UP) {
+		if(selected_inventory > 0) audio_play_sound(sndMenu_up,10,0);
+		selected_inventory = max(0, --selected_inventory);
+	};
+	if(input_DOWN) {
+		if(selected_inventory < inventory_max) audio_play_sound(sndMenu_down,10,0);
+		selected_inventory = min(inventory_max, ++selected_inventory);
+	};
+	if(input_ACTION1 && alarm[0] == -1){
+		var item_id = player_inventory[| selected_inventory];
+		use_inventory_item(item_id);
+	};
+};
+
+#endregion
+
+#region DRAW UI
+
 function draw_inventory(){
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
@@ -33,21 +55,19 @@ function draw_inventory(){
 	draw_text(752,432,"Money: " + player_money);
 };
 
-function control_inventory(){
-	var inventory_max = ds_list_size(player_inventory) - 1;
-	if(input_UP) {
-		if(selected_inventory > 0) audio_play_sound(sndMenu_up,10,0);
-		selected_inventory = max(0, --selected_inventory);
-	};
-	if(input_DOWN) {
-		if(selected_inventory < inventory_max) audio_play_sound(sndMenu_down,10,0);
-		selected_inventory = min(inventory_max, ++selected_inventory);
-	};
-	if(input_ACTION1 && alarm[0] == -1){
-		var item_id = player_inventory[| selected_inventory];
-		use_inventory_item(item_id);
+function draw_quests(){
+	var questxx = 0 repeat(ds_list_size(spud_quests)){
+		var quest_row = ds_grid_value_y(library_quests, 0,0,0,ds_grid_height(library_quests)-1, spud_quests[|questxx]);
+		var quest_name = library_quests[# quest_col.quest_name, quest_row];
+		draw_text(384,136 + (item_padding * questxx),quest_name)
+		questxx++;
 	};
 };
+
+
+#endregion
+
+#region OTHER
 
 function use_inventory_item(_itemid) {
 	var item_row = ds_grid_value_y(library_items, 0, 0, 0, ds_grid_height(library_items), _itemid);
@@ -79,3 +99,13 @@ function format_number(_number){ // Adds Commas in 4+ digit numbers
 	}
 	return str;
 };
+
+#endregion
+
+
+
+
+
+
+
+	

@@ -53,6 +53,15 @@ if (keyboard_check_pressed(vk_enter)) {
 			ds_list_insert(inputLog,0,"OVER 9000!");
 			spud_atk = 9001;
 			break;
+		case "quest activate":
+			QuestDirector.quest_notif = update_quest.activate;
+			break;
+		case "quest update":
+			QuestDirector.quest_notif = update_quest.update;
+			break;
+		case "quest complete":
+			QuestDirector.quest_notif = update_quest.complete;
+			break;
 		default:
 			ds_list_insert(inputLog,0,"UNKNOWN COMMAND");
 			break;

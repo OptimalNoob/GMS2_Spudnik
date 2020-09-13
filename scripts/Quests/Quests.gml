@@ -1,16 +1,12 @@
 /// @func build_quests();
 /// @desc Build Quests Table
 function build_quests(){
-	enum quest{
-		tutorial,
-		slime_clean_up,
-		a_helping_hust
-	}
-	var quest_array = [ //questID, Name, Status, Description, ObjFlags, ObjNames, 
+	
+	var quest_array = [ 
 		[
 			"0001",
 			"Kill Some Slimes!",
-			-1,
+			0,
 			"Cornovich has asked you to clear out some slimes from the neighboring area",
 			[0,0],
 			["Go to the Forest", "Kill 3 Slimes", "Return to Cornovich"]
@@ -60,12 +56,25 @@ function listener_room_tran(){
 	
 };
 
-function listener_npc(){
+//function listener_npc(){
 	
-};
+//};
 
-function listener_npc(){
+//function listener_npc(){
 	
-};
+//};
 
 #endregion
+
+
+function quest_activate(_questID){
+	var quest_row = ds_grid_value_y(library_quests, 0, 0, 0, ds_grid_height(library_quests) - 1, _questID);
+	library_quests[# quest_col.quest_state, quest_row] = 0;
+	quest_notif = update_quest.activate;
+	ds_list_insert(spud_quests, 0, _questID);
+};
+
+function quest_update(_questID, ){
+	quest_notif = update_quest.activate;
+	ds_list_insert(spud_quests, 0, _questID);
+};

@@ -29,8 +29,10 @@ function build_player_globals() {
 	globalvar player_inventory;
 	globalvar spud_spawn_x;
 	globalvar spud_spawn_y;
+	globalvar spud_quests;
 	
 	player_inventory = ds_list_create();
+	spud_quests = ds_list_create();
 	ds_list_add(player_inventory, "0001","0001","0004");
 	spud_hp = 10;
 	spud_atk = 3;

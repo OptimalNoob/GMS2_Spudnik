@@ -9,5 +9,7 @@ load_sounds();
 build_quests();
 randomize();
 
+instance_create_layer(0,0,"Instances", QuestDirector);
+
 // Finish Init
 room_goto(room_debug);

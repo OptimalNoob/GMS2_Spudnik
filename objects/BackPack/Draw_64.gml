@@ -22,7 +22,7 @@ var label_yy = 0; repeat(6) {
 switch (selected_menu) {
 	case backpackMenu.inventory: draw_inventory(); break;
 	case backpackMenu.party: break;
-	case backpackMenu.quests: break;
+	case backpackMenu.quests: draw_quests(); break;
 	case backpackMenu.journal: break;
 	case backpackMenu.settings: break;
 	case backpackMenu.quit: break;
