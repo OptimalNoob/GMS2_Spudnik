@@ -10,13 +10,19 @@ function build_globals(){
 	globalvar library_enemies;
 	globalvar library_quests;
 	globalvar battle_spawn_table;
+	globalvar battle_room_prev;
 	
-	globalvar event_npc;
-	globalvar event_tran;
-	globalvar event_battle;
-	globalvar event_purchase;
-	globalvar event_use_item;
-	globalvar listen_warp;
+	globalvar listenerWarp;
+    globalvar listenerTalk;
+    globalvar listenerBattle;
+    globalvar listenerPurchase;
+    globalvar listenerItemUse;
+
+    listenerWarp = undefined
+    listenerTalk = undefined
+    listenerPurchase = undefined
+    listenerItemUse = undefined
+    listenerBattle = ds_list_create();
 	
 	camX = 0;
 	camY = 0;
@@ -26,12 +32,7 @@ function build_globals(){
 	noclipMode = false;
 	npc_flags = ds_list_create();
 	battle_spawn_table = ds_list_create();
-	event_npc = false;
-	event_tran = false;
-	event_battle = false;
-	event_purchase = false;
-	event_use_item = false;
-	return_room = 0;
+	battle_room_prev = 0;
 };
 
 function build_player_globals() {

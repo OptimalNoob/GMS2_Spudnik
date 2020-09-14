@@ -1,7 +1,7 @@
 /// @desc
 get_player_input();
 
-message_array = dialog_library[# speaker_text_flag, 0]; // Store array of dialog from NPC
+message_array = dialog_library[# 0,speaker_text_flag]; // Store array of dialog from NPC
 
 if(input_ACTION1 && !speaking && !paused){
 	input_ACTION1 = false;

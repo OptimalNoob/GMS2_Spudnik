@@ -8,3 +8,4 @@ y = spud_spawn_y;
 paused = false;
 
 warping = false;
+warp = 0;

@@ -1,3 +1,3 @@
 target_room = room_debug_interior;
-spud_x = 104;
-spud_y = 288;
+spud_x = 56;
+spud_y = 168;

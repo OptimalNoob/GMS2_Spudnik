@@ -1,6 +1,7 @@
 /// @desc
 
 get_player_input();
+selected_item_id = 0;
 shop_inventory_length = ds_list_size(shop_inventory);
 if(!confirm_buy){
 	if(input_DOWN){
@@ -32,13 +33,14 @@ if(!confirm_buy){
 };
 
 if(confirm_buy){
-	var selected_item_id = shop_inventory[| selected_buy];
+	selected_item_id = shop_inventory[| selected_buy];
 	if(input_ACTION1 && alarm[0] == -1) {
 		audio_play_sound(sndShop_buyItem,10,0);
 		buy_item(selected_item_id);
 		confirm_buy = false;
 	};
 	if(input_ACTION2){
+		selected_item_id = 0;
 		audio_play_sound(sndMenu_cancel,10,0);
 		confirm_buy = false;	
 	};

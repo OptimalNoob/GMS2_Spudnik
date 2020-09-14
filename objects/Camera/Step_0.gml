@@ -1,7 +1,7 @@
 /// @desc
 
-camX = clamp(follow.x,x_min,x_max);
-camY = clamp(follow.y,y_min,y_max);
+//camX = clamp(follow.x,x_min,x_max);
+//camY = clamp(follow.y,y_min,y_max);
 
 //camX = follow.x;
 //camY = follow.y;

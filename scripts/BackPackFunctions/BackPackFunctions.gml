@@ -1,6 +1,8 @@
 #region CONTROLS
 
 function control_inventory(){
+	item_id = 0;
+	item_used = false;
 	var inventory_max = ds_list_size(player_inventory) - 1;
 	if(input_UP) {
 		if(selected_inventory > 0) audio_play_sound(sndMenu_up,10,0);
@@ -11,7 +13,7 @@ function control_inventory(){
 		selected_inventory = min(inventory_max, ++selected_inventory);
 	};
 	if(input_ACTION1 && alarm[0] == -1){
-		var item_id = player_inventory[| selected_inventory];
+		item_id = player_inventory[| selected_inventory];
 		use_inventory_item(item_id);
 	};
 };
@@ -75,6 +77,7 @@ function use_inventory_item(_itemid) {
 	switch (item_type) {
 		case "00":
 			if (spud_hp < spud_max_hp) {
+				item_used = true;
 				audio_play_sound(sndItem_usePotion,10,0);
 				var healing_factor = library_items[# item_col.healValue, item_row];
 				spud_hp = min(spud_max_hp, floor(spud_hp + (spud_max_hp * healing_factor)));

@@ -1,2 +1,2 @@
 /// @desc
-room_goto(listen_warp.target_room);
+room_goto(warp.target_room);

@@ -10,6 +10,7 @@ build_quests();
 randomize();
 
 instance_create_layer(0,0,"Instances", QuestDirector);
+instance_create_layer(0,0,"Instances", EventListener);
 
 // Finish Init
 room_goto(room_debug);

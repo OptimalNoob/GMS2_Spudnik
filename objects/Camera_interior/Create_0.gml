@@ -1,6 +1,6 @@
 /// @desc
 
-scale = 4;
+scale = 5;
 wW = windowWidth;
 wH = windowHeight;
 x_min = (wW / scale) / 2;

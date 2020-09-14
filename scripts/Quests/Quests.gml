@@ -5,11 +5,43 @@ function build_quests(){
 	var quest_array = [ 
 		[
 			"0001",
-			"Kill Some Slimes!",
-			0,
-			"Cornovich has asked you to clear out some slimes from the neighboring area",
+			"TUTORIAL: NPCs",
+			-1,
+			"You can talk to NPCs when the prompt appears and you press 'E'.",
+			[0],
+			["Talk to Cornovich"]
+		],
+		[
+			"0002",
+			"TUTORIAL: Shops",
+			-1,
+			"Shops allow you to purchase helpful items that assist you throughout your adventure!",
+			[0],
+			["Talk to Broc", "Purchase a small Health Potion"]
+		],
+		[
+			"0003",
+			"TUTORIAL: Using Items",
+			-1,
+			"You can use items from your backpack to heal!",
+			[0],
+			["Use a small healing potion to recover some health after your brutal yet awesome battles."]
+		],
+		[
+			"0004",
+			"TUTORIAL: Battles",
+			-1,
+			"Goops are fucking assholes, got eeeeem",
 			[0,0],
-			["Go to the Winterland", "Kill 3 Slimes", "Return to Cornovich"]
+			["Encounter and Defeat 3 Goops"]
+		],
+		[
+			"0005",
+			"TUTORIAL: Exploring the World",
+			-1,
+			"Get the fuck out of here you damn hermit",
+			[0],
+			["l e a v e"]
 		],
 	];
 	library_quests = ds_grid_create_from_array(quest_array);
@@ -39,63 +71,62 @@ function ds_grid_create_from_array(_array){
 	return ds_grid;
 };
 
-#region QUEST LISTENERS
-
-///@func listen_npc();
-///@desc Listens to Player talking to NPCs
-function listen_npc(){
-	
-};
-
-///@func listen_battle();
-///@desc Listens to Player completing a battle and counting specified enemy
-function listen_battle(){
-
-};
-
-///@func listen_tran();
-///@desc Listens to Player transitioning to another room
-function listen_tran(_warpid){
-	var targ_room = _warpid.target_room;
-	return targ_room;
-};
-///@func listen_purchase();
-///@desc Listens to Player transitioning to another room
-function listen_purchase(){
-	
-};
-
-///@func listen_use_item();
-///@desc Listens to Player transitioning to another room
-function listen_use_item(){
-	
-};
-
-#endregion
-function count_enemies(_enemyID){
-	var enemycount = 0;
-	var i = 0; repeat(ds_list_size(return_battle_list)){
-		var enemy_row = ds_grid_value_y(library_enemies,10,0,10,ds_grid_height(library_enemies)-1, return_battle_list[|i]);
-		var enemy_id = library_enemies[# enemy_col.enemyID, enemy_row];
-		if(enemy_id = _enemyID) enemycount++;
-		i++;
-	};
-	//ds_list_clear(return_battle_list);
-	return enemycount;
-};
-
 function quest_activate(_questID){
-	var quest_row = ds_grid_value_y(library_quests, 0, 0, 0, ds_grid_height(library_quests) - 1, _questID);
+	QuestDirector.quest_notif = update_quest.activate;
+	var quest_height = ds_grid_height(library_quests) - 1;
+	var quest_row = ds_grid_value_y(library_quests, 0,0,0,quest_height,_questID);
 	library_quests[# quest_col.quest_state, quest_row] = 0;
-	quest_notif = update_quest.activate;
-	ds_list_insert(spud_quests, 0, _questID);
-};
-
-function quest_update(){
-	quest_notif = update_quest.update;
+	ds_list_add(spud_quests,_questID);
 };
 
 function quest_progress(_questID){
-	var quest_row = ds_grid_value_y(library_quests, 0, 0, 0, ds_grid_height(library_quests) - 1, _questID);
-	library_quests[# quest_col.obj_flag, quest_row][0] += 1;
+	QuestDirector.quest_notif = update_quest.update;
+	var quest_height = ds_grid_height(library_quests) - 1;
+	var quest_row = ds_grid_value_y(library_quests, 0,0,0,quest_height,_questID);
+	library_quests[# quest_col.obj_flag, quest_row][0]++;
+};
+
+function quest_complete(_questID){
+	QuestDirector.quest_notif = update_quest.complete;
+	var quest_height = ds_grid_height(library_quests) - 1;
+	var quest_row = ds_grid_value_y(library_quests, 0,0,0,quest_height,_questID);
+	library_quests[# quest_col.quest_state, quest_row] = 1;
+	var quest = ds_list_find_index(spud_quests, _questID)
+	ds_list_delete(spud_quests,quest);
+};
+
+function check_listeners(){
+	if(listenerWarp!=undefined || listenerTalk!=undefined || listenerPurchase!=undefined
+	|| listenerItemUse!=undefined || !ds_list_empty(listenerBattle)){
+		return true;
+	};
+};
+
+function quest_get_row(_questID){
+	var quest_height = ds_grid_height(library_quests) - 1;
+	var quest_row = ds_grid_value_y(library_quests, 0,0,0,quest_height,_questID);
+	return quest_row;
+};
+
+function enemy_get_row(_enemyID){
+	
+};
+
+function quest_get_progress(_questID){
+	var quest_height = ds_grid_height(library_quests) - 1;
+	var quest_row = ds_grid_value_y(library_quests, 0,0,0,quest_height,_questID);
+	var obj_flag = library_quests[# quest_col.obj_flag, quest_row][0];
+	return obj_flag;
+};
+
+function listener_enemy_count(_enemyID){
+	var enemycount = 0;
+    var i = 0; repeat(ds_list_size(listenerBattle)){
+        var enemy_row = ds_grid_value_y(library_enemies,10,0,10,ds_grid_height(library_enemies)-1, listenerBattle[|i]);
+        var enemy_id = library_enemies[# enemy_col.enemyID, enemy_row];
+        if(enemy_id = _enemyID) enemycount++;
+        i++;
+    };
+    //ds_list_clear(return_battle_list);
+    return enemycount;
 };

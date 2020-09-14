@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Classes",
-    "path": "folders/Classes.yy",
+    "name": "Quests",
+    "path": "folders/Classes/Quests.yy",
   },
   "resourceVersion": "1.0",
-  "name": "TestQuest",
+  "name": "quest_0003",
   "tags": [],
   "resourceType": "GMScript",
 }

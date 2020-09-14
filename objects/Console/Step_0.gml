@@ -25,7 +25,7 @@ if (keyboard_check_pressed(vk_enter)) {
 			ds_list_insert(inputLog,0,"Noclip Mode: " + string(noclipMode));
 			break;
 		case "flag_cornovich":
-			npc_flags[| npc_flag.cornovich]++;
+			npc_flags[| npc_flag.cornovich] = 1;
 			ds_list_insert(inputLog,0,"+1 Cornovich Flag");
 			break;
 		case "item next":
@@ -61,6 +61,9 @@ if (keyboard_check_pressed(vk_enter)) {
 			break;
 		case "quest complete":
 			QuestDirector.quest_notif = update_quest.complete;
+			break;
+		case "quest start":
+			quest_activate("0001");
 			break;
 		default:
 			ds_list_insert(inputLog,0,"UNKNOWN COMMAND");

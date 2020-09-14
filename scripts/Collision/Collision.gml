@@ -28,6 +28,7 @@ function collide_with_npc(_range){
 function collide_with_warp(_warp){
 	_warp = instance_place(x,y,Warp);
 	if (_warp != noone && !warping) {
+		if(!instance_exists(RoomTransition)) instance_create_layer(0,0,"Instances",RoomTransition);
 		paused = true;
 		warping = true;
 		alarm[0] = 60;

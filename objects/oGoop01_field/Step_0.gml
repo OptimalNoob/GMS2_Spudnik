@@ -20,6 +20,7 @@ if(return_home){
 
 // Collide with Player > Set Spawn Table > Send to Battle
 if(place_meeting(x,y,oSpud)){
+	battle_room_prev = room;
 	ds_list_copy(battle_spawn_table,spawn_table);
 	room_persistent = true;
 	with(parent_spawner) instance_destroy();
