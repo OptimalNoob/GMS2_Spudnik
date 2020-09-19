@@ -6,9 +6,9 @@ function build_globals(){
 	globalvar debugMode;
 	globalvar noclipMode;
 	globalvar npc_flags;
-	globalvar library_items;
-	globalvar library_enemies;
-	globalvar library_quests;
+	globalvar dict_items;
+	globalvar dict_enemies;
+	globalvar dict_quests;
 	globalvar battle_spawn_table;
 	globalvar battle_room_prev;
 	
@@ -47,7 +47,7 @@ function build_player_globals() {
 	
 	player_inventory = ds_list_create();
 	spud_quests = ds_list_create();
-	ds_list_add(player_inventory, "0001","0001","0004");
+	ds_list_add(player_inventory, "i_0001","i_0001","i_0004");
 	spud_hp = 10;
 	spud_atk = 999;
 	spud_max_hp = 1000;
@@ -131,10 +131,6 @@ function get_player_input(){
 };
 
 function build_flags(){
-	enum npc_flag{
-		cornovich,
-		broc
-	};
 	npc_flags[| npc_flag.cornovich] = 0;
 	npc_flags[| npc_flag.broc] = 0;
 };
