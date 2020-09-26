@@ -32,7 +32,7 @@ function draw_inventory(){
 	if(inMenu){
 		draw_set_color(c_white);
 		// Draw Item Cursor
-		if(!ds_list_empty(player_inventory)) draw_rectangle(344,128 + (item_padding * selected_inventory),600,160 + (item_padding * selected_inventory),0);
+		if(!ds_list_empty(player_inventory)) draw_rectangle(344,128 + (item_padding * selected_inventory),710,160 + (item_padding * selected_inventory),0);
 		draw_set_color(c_black);
 	};
 	
@@ -45,7 +45,7 @@ function draw_inventory(){
 			var item_display = dict_items[# dic_i.NAME, item_row]; // Assign the Display Name column value from item_row
 			var item_icon = dict_items[# dic_i.SPRITE, item_row]; // Assign the Sprite column value for item_row
 			draw_sprite(item_icon,0,368,160 + (item_padding * invyy));
-			draw_text(384,136 + (item_padding * invyy),item_display); // Draw the Display Name for the item
+			draw_text(400,134 + (item_padding * invyy),item_display); // Draw the Display Name for the item
 			invyy++;
 		};
 	};

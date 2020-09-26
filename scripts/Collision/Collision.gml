@@ -25,6 +25,18 @@ function collide_with_npc(_range){
 	};
 };
 
+function collide_with_chest(_range){
+	var w = _range - 2;
+	var h = _range / 4;
+	var _chest;
+	_chest = collision_ellipse(x - w, y - h, x + w, y + h, ChestParent, 0, 1);
+	if (_chest != noone) {
+		if(_chest.image_index != 1) _chest.interactable = true;
+		if(_chest.image_index == 1) _chest.interactable = false;
+		if(_chest.image_index == 0 && input_ACTION1) chest_open(_chest);
+	};
+};
+
 function collide_with_warp(_warp){
 	_warp = instance_place(x,y,Warp);
 	if (_warp != noone && !warping) {
@@ -32,7 +44,6 @@ function collide_with_warp(_warp){
 		paused = true;
 		warping = true;
 		alarm[0] = 60;
-		show_debug_message("Warp");
 		room_persistent = false;
 		spud_spawn_x = _warp.spud_x;
 		spud_spawn_y = _warp.spud_y;

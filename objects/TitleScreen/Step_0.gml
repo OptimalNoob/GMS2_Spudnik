@@ -15,7 +15,6 @@ if(pre_title){
 	};
 	
 };
-show_debug_message(button_x)
 
 if(e_slide && pre_title){
 	e_x = max(-sprite_get_width(sTitleBtn_pressE), e_x - 20);

@@ -11,7 +11,7 @@
     "path": "audiogroups/audgroup_Music",
   },
   "soundFile": "musTitleTheme01.wav",
-  "duration": 195.389,
+  "duration": 188.645,
   "parent": {
     "name": "Music",
     "path": "folders/Music.yy",

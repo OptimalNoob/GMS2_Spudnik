@@ -15,7 +15,7 @@ enum npc_flag{			// Accessing NPC Flags
 	broc
 };
 
-enum dic_q{
+enum dic_q{				// Accessing Quest Dictionary
 	ID,
 	NAME,
 	STATE,
@@ -24,16 +24,15 @@ enum dic_q{
 	ONAME
 };
 
-
 enum dic_e{				// Accessing Enemy Dictionary
-	ID,			
+	ID,
 	NAME,
 	DESC,
-	RARITY,		
-	HP,		
-	ATK,		
-	DEF,	
-	SPD,		
+	RARITY,
+	HP,
+	ATK,
+	DEF,
+	SPD,
 	OBJS,
 	OBJB
 };
@@ -49,4 +48,9 @@ enum dic_i{				// Accessing Item Dictionary
 	HEAL,
 	STRENGTH,
 	SPEED,
+};
+
+enum D_STATE{				// Accessing NPC Dialog State
+	NPC,
+	STATE
 };
