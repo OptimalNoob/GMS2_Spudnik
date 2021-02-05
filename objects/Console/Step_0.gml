@@ -63,7 +63,7 @@ if (keyboard_check_pressed(vk_enter)) {
 			QuestDirector.quest_notif = update_quest.complete;
 			break;
 		case "quest start":
-			quest_activate("0001");
+			quest_activate("q_0001");
 			break;
 		default:
 			ds_list_insert(inputLog,0,"UNKNOWN COMMAND");

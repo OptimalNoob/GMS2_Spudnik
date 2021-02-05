@@ -35,18 +35,17 @@ if(instance_exists(Camera_unrestricted)){
 	draw_text(16,144,"yTo: " + string(Camera_unrestricted.yTo));
 };
 
-if(item_number >= 0 && item_number <= ds_grid_height(library_items) - 1){
+if(item_number >= 0 && item_number <= ds_grid_height(dict_items) - 1){
 	draw_text(16,240,"[Items]");
-	draw_text(16,256,"ID: " + string(library_items[# 0,item_number]));
-	draw_text(16,272,"Display Name: " + string(library_items[# 1,item_number]));
-	draw_text(16,288,"Description: " + string(library_items[# 2,item_number]));
-	draw_text(16,304,"Type: " + string(library_items[# 3,item_number]));
-	draw_text(16,320,"Use Outside Battle?: " + string(library_items[# 4,item_number]));
-	draw_text(16,336,"Buy Value: " + string(library_items[# 5,item_number]));
-	draw_text(16,352,"Sell Value: " + string(library_items[# 6,item_number]));
-	draw_text(16,368,"Sprite: " + string(sprite_get_name(library_items[# 7,item_number])));	
-	draw_text(16,384,"Heal Amount: " + string(library_items[# 8,item_number]) + "%");
-	draw_text(16,400,"Strength Amount: " + string(library_items[# 9,item_number]) + "%");
-	draw_text(16,416,"Speed Value: " + string(library_items[# 10,item_number]) + "%");
+	draw_text(16,256,"ID: " + string(dict_items[# dic_i.ID,item_number]));
+	draw_text(16,272,"Display Name: " + string(dict_items[# dic_i.NAME,item_number]));
+	draw_text(16,288,"Description: " + string(dict_items[# dic_i.DESC,item_number]));
+	draw_text(16,320,"Use Outside Battle?: " + string(dict_items[# dic_i.OUTBAT,item_number]));
+	draw_text(16,336,"Buy Value: " + string(dict_items[# dic_i.PRICE,item_number]));
+	draw_text(16,352,"Sell Value: " + string(dict_items[# dic_i.VALUE,item_number]));
+	draw_text(16,368,"Sprite: " + string(sprite_get_name(dict_items[# dic_i.SPRITE, item_number])));	
+	draw_text(16,384,"Heal Amount: " + string(dict_items[# dic_i.HEAL,item_number]) + "%");
+	draw_text(16,400,"Strength Amount: " + string(dict_items[# dic_i.STRENGTH,item_number]) + "%");
+	draw_text(16,416,"Speed Value: " + string(dict_items[# dic_i.SPEED,item_number]) + "%");
 };
 draw_set_color(c_black);

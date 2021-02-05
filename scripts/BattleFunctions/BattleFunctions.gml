@@ -4,14 +4,13 @@
 #region BEGINNING OF PLAYER TURN
 function playerturn(){
 	#region CONTROL BATTLE MENU
-	if(!inMenu){
+	if(!inMenu && !player_attacked){
 		ui_ind_items = 0;
 		ui_ind_special = 0;
 		ui_ind_attack  = 0;
 		ui_ind_other = 0;
 		if(input_UP){
 			alarm[0] = 2;
-			show_debug_message("Pressed Up");
 			audio_play_sound(sndMenu_confirm,10,0);
 			current_menu = pMenu.items;
 			inMenu = true; in_items = true; in_special = false; in_attack = false; in_other = false;
@@ -55,7 +54,6 @@ function playerturn(){
 	#endregion
 	if(!attack_state && !done_anim && player_attacked){
 		if(attack_enemy.sprite_index = attack_enemy.sprite_library[sprite_lib.idle]){
-			show_debug_message("Beginning Attack Animation");
 			oSpud_battle.sprite_index = oSpud_battle.sprite_library[sprite_lib.attacking];
 			oSpud_battle.image_index = 0;
 			attack_enemy.image_index = 0;
@@ -63,7 +61,6 @@ function playerturn(){
 		}
 		//Once the attack (animation) has ended, set the sprite back to idle then begin dealing damage to Spud
 		if(attack_enemy.sprite_index = attack_enemy.sprite_library[sprite_lib.damaged] && attack_enemy.image_index >= (attack_enemy.image_number - 1)){
-			show_debug_message("Finishing Attack Animation, switching back to idle");
 			attack_enemy.image_index = 0;
 			done_anim = true;
 			attack_state=false;
@@ -93,7 +90,6 @@ function item_menu(){
 			use_battle_item(item_id)
 		};
 	};
-	show_debug_message("Inventory Item: " + string(inv_sel_item));
 };
 
 function special_menu(){
@@ -165,13 +161,13 @@ function player_attack_reg(){
 
 #region USE ITEM IN BATTLE
 function use_battle_item(_itemid) {
-	var item_row = ds_grid_value_y(library_items, 0, 0, 0, ds_grid_height(library_items), _itemid);
-	var item_type = string_copy(string(_itemid),0,2);
+	var item_row = ds_grid_value_y(dict_items, 0, 0, 0, ds_grid_height(dict_items), _itemid);
+	var item_type = string_copy(string(_itemid),3,2);
 	switch (item_type) {
 		case "00":
 			if (spud_hp < spud_max_hp) {
 				audio_play_sound(sndItem_usePotion,10,0);
-				var healing_factor = library_items[# item_col.healValue, item_row];
+				var healing_factor = dict_items[# dic_i.HEAL, item_row];
 				spud_hp = min(spud_max_hp, floor(spud_hp + (spud_max_hp * healing_factor)));
 				ds_list_delete(player_inventory, inv_sel_item);
 				if (inv_sel_item > 0) {
@@ -317,9 +313,9 @@ function draw_item_menu(){
 		var item_padding = 32;
 		var invyy = 0; repeat(ds_list_size(player_inventory)){
 			var item_current = player_inventory[| invyy];
-			var item_row = ds_grid_value_y(library_items, 0, 0, 0, ds_grid_height(library_items), item_current);
-			var item_display = library_items[# item_col.displayName, item_row]; // Assign the Display Name column value from item_row
-			var item_icon = library_items[# item_col.sprite, item_row]; // Assign the Sprite column value for item_row
+			var item_row = ds_grid_value_y(dict_items, 0, 0, 0, ds_grid_height(dict_items), item_current);
+			var item_display = dict_items[# dic_i.NAME, item_row]; // Assign the Display Name column value from item_row
+			var item_icon = dict_items[# dic_i.SPRITE, item_row]; // Assign the Sprite column value for item_row
 			draw_sprite(item_icon,0,376,242 + (item_padding * invyy));
 			draw_text(398,216 + (item_padding * invyy),item_display); // Draw the Display Name for the item
 		invyy++;

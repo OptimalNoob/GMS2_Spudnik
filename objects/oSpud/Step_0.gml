@@ -17,6 +17,7 @@ vsp = move_v * move_speed / sqrt(abs(move_v) + abs(move_h) + .1);
 if(!noclipMode) collide_with_object(Collider);
 collide_with_npc(range);
 warp = collide_with_warp(Warp);
+collide_with_chest(range);
 
 x += hsp;
 y += vsp;

@@ -32,19 +32,20 @@ function draw_inventory(){
 	if(inMenu){
 		draw_set_color(c_white);
 		// Draw Item Cursor
-		if(!ds_list_empty(player_inventory)) draw_rectangle(344,128 + (item_padding * selected_inventory),600,160 + (item_padding * selected_inventory),0);
+		if(!ds_list_empty(player_inventory)) draw_rectangle(344,128 + (item_padding * selected_inventory),710,160 + (item_padding * selected_inventory),0);
 		draw_set_color(c_black);
 	};
 	
 	// Draw Item Inventory List
 	if (!ds_list_empty(player_inventory)) {
+		var item_dic_height = ds_grid_height(dict_items) - 1;
 		var invyy = 0; repeat(ds_list_size(player_inventory)){
 			var item_current = player_inventory[| invyy];
-			var item_row = ds_grid_value_y(library_items, 0, 0, 0, ds_grid_height(library_items), item_current);
-			var item_display = library_items[# item_col.displayName, item_row]; // Assign the Display Name column value from item_row
-			var item_icon = library_items[# item_col.sprite, item_row]; // Assign the Sprite column value for item_row
+			var item_row = ds_grid_value_y(dict_items, dic_i.ID, 0, dic_i.ID, item_dic_height, item_current);
+			var item_display = dict_items[# dic_i.NAME, item_row]; // Assign the Display Name column value from item_row
+			var item_icon = dict_items[# dic_i.SPRITE, item_row]; // Assign the Sprite column value for item_row
 			draw_sprite(item_icon,0,368,160 + (item_padding * invyy));
-			draw_text(384,136 + (item_padding * invyy),item_display); // Draw the Display Name for the item
+			draw_text(400,134 + (item_padding * invyy),item_display); // Draw the Display Name for the item
 			invyy++;
 		};
 	};
@@ -58,9 +59,10 @@ function draw_inventory(){
 };
 
 function draw_quests(){
+	var quest_height = ds_grid_height(dict_quests) - 1;
 	var questxx = 0 repeat(ds_list_size(spud_quests)){
-		var quest_row = ds_grid_value_y(library_quests, 0,0,0,ds_grid_height(library_quests)-1, spud_quests[|questxx]);
-		var quest_name = library_quests[# quest_col.quest_name, quest_row];
+		var quest_row = ds_grid_value_y(dict_quests, 0,0,0,quest_height, spud_quests[|questxx]);
+		var quest_name = dict_quests[# dic_q.NAME, quest_row];
 		draw_text(384,136 + (item_padding * questxx),quest_name)
 		questxx++;
 	};
@@ -72,14 +74,14 @@ function draw_quests(){
 #region OTHER
 
 function use_inventory_item(_itemid) {
-	var item_row = ds_grid_value_y(library_items, 0, 0, 0, ds_grid_height(library_items), _itemid);
-	var item_type = string_copy(string(_itemid),0,2);
+	var item_row = ds_grid_value_y(dict_items, dic_i.ID, 0, dic_i.ID, ds_grid_height(dict_items), _itemid);
+	var item_type = string_copy(string(_itemid),3,2);
 	switch (item_type) {
 		case "00":
 			if (spud_hp < spud_max_hp) {
 				item_used = true;
 				audio_play_sound(sndItem_usePotion,10,0);
-				var healing_factor = library_items[# item_col.healValue, item_row];
+				var healing_factor = dict_items[# dic_i.HEAL, item_row];
 				spud_hp = min(spud_max_hp, floor(spud_hp + (spud_max_hp * healing_factor)));
 				ds_list_delete(player_inventory, selected_inventory);
 				if (selected_inventory > 0) {

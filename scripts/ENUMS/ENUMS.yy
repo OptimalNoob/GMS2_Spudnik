@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Classes",
-    "path": "folders/Classes.yy",
+    "name": "Utility",
+    "path": "folders/Classes/Utility.yy",
   },
   "resourceVersion": "1.0",
   "name": "ENUMS",

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sIcon_dialog",
-    "path": "sprites/sIcon_dialog/sIcon_dialog.yy",
+    "name": "sIcon_action",
+    "path": "sprites/sIcon_action/sIcon_action.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,6 +25,7 @@
     {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"parent":{"name":"DialogController","path":"objects/DialogController/DialogController.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"parent":{"name":"DialogController","path":"objects/DialogController/DialogController.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"DialogController","path":"objects/DialogController/DialogController.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"DialogController","path":"objects/DialogController/DialogController.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

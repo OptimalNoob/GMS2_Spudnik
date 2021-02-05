@@ -17,6 +17,6 @@ dialog[# 0,0] = [
 
 #region SHOP INVENTORY
 ds_list_add(npc_inventory,
-"0001","0002","0003","0004"
+"i_0001","i_0002","i_0003","i_0004"
 );
 #endregion
