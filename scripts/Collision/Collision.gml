@@ -34,7 +34,9 @@ function collide_with_chest(_range){
 		if(_chest.image_index != 1) _chest.interactable = true;
 		if(_chest.image_index == 1) _chest.interactable = false;
 		if(_chest.image_index == 0 && input_ACTION1) chest_open(_chest);
-	};
+	}else{
+		ChestParent.interactable = false;
+	}
 };
 
 function collide_with_warp(_warp){
