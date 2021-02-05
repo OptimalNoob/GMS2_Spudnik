@@ -160,8 +160,8 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"room_title","path":"rooms/room_title/room_title.yy",},},
     {"roomId":{"name":"room_init","path":"rooms/room_init/room_init.yy",},},
-    {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
     {"roomId":{"name":"room_debug","path":"rooms/room_debug/room_debug.yy",},},
+    {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
     {"roomId":{"name":"room_debug_interior","path":"rooms/room_debug_interior/room_debug_interior.yy",},},
     {"roomId":{"name":"room_debug_battle","path":"rooms/room_debug_battle/room_debug_battle.yy",},},
     {"roomId":{"name":"room_snow","path":"rooms/room_snow/room_snow.yy",},},

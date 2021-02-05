@@ -20,7 +20,7 @@ if(instance_exists(Camera)){
 	draw_text(16,208,"yTo: " + string(Camera.yTo));
 };
 
-if(instance_exists(Camera_unrestricted)){
+/*if(instance_exists(Camera_unrestricted)){
 	draw_set_color(c_white);
 	draw_set_font(font_debugGUI);
 	draw_set_alpha(1);
@@ -34,7 +34,7 @@ if(instance_exists(Camera_unrestricted)){
 	draw_text(16,128,"xTo: " + string(Camera_unrestricted.xTo));
 	draw_text(16,144,"yTo: " + string(Camera_unrestricted.yTo));
 };
-
+*/
 if(item_number >= 0 && item_number <= ds_grid_height(dict_items) - 1){
 	draw_text(16,240,"[Items]");
 	draw_text(16,256,"ID: " + string(dict_items[# dic_i.ID,item_number]));
