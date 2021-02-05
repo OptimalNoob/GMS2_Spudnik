@@ -1,0 +1,5 @@
+/// @desc
+if(sprite_index == sprite_library[sprite_lib.damaged] && image_index >= image_number - 1){
+	image_index = 0;
+	sprite_index = sprite_library[sprite_lib.idle];
+};
