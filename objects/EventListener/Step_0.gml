@@ -17,7 +17,7 @@ if(instance_exists(DialogController)){
     if(DialogController.speaking &&
         DialogController.char_count == 1 &&
         DialogController.current_line == 0){
-        listenerTalk = DialogController.speaker_id;
+        listenerTalk = DialogController.npc_instance;
     };
 };
 

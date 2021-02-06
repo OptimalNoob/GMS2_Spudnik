@@ -1,35 +1,48 @@
-function build_dictionary_dialog(){
-	//[
-	//	DIALOG STATE,		{real}				THIS IS IN REFERENCE TO THE DIALOG STATE IN 'IniStates' Script >> global_state_create_dialogs()
-	//	DIALOG STRINGS,		{array}{string}		These are the dialogs that the NPC will speak based on the dialog state
-	//],(comma for more entries)
-#region CORNOVICH DIALOG
-	var dialog_array_corn = [
+function build_dict_dialog(){
+	#region CORNOVICH DIALOG ARRAY
+	var dialog_corn_normal_array  = [
 		[
-			0,
-			["Cornovich message in Flag 0","Cornovich second message in Flag 0"]
+			0001, ["This is some corn text!", "Corn is porn"], 0002
 		],
+		
 		[
-			1,
-			["Cornovich message in Flag 1","Cornovich second message in Flag 1","Cornovich third message in Flag 1"]
+			0002, ["isn't text cool?", "it sure is dank as shit"], 0003
 		],
-	];
-#endregion
-#region BROC DIALOG
-	var dialog_array_broc = [
+		
 		[
-			0,
-			["Broc message in Flag 0","Broc second message in Flag 0"]
+			0003, ["this text loops, I don't know any other words"], -1
 		],
+	]
+	dialog_corn_normal = ds_grid_create_from_array(dialog_corn_normal_array);
+	#endregion
+	#region BROC DIALOG ARRAY
+	var dialog_broc_normal_array  = [
+	
 		[
-			1,
-			["Broc message in Flag 1","Broc second message in Flag 1","Broc third message in Flag 1"]
+			0001, ["This is some broc text!", "they really should call me brocc"], 0002
 		],
-	];
-#endregion
-
-#region COMPILE ARRAYS INTO GRIDS
-	dict_dialog_corn = ds_grid_create_from_array(dialog_array_corn);
-	dict_dialog_broc = ds_grid_create_from_array(dialog_array_broc);
-#endregion
-};
+		
+		[
+			0002, ["doesn't text fucking suck?", "it sure is dumb as shit"], -1
+		],
+		
+	]
+	dialog_broc_normal = ds_grid_create_from_array(dialog_broc_normal_array);
+	#endregion
+	#region MASTER NORMAL DIALOG
+	var dict_dialog_normal_array = [
+            //npc_id //npc_dialog_normal(ds_grid) //bookmark_normal
+        [
+            0001, dialog_corn_normal, "0001"
+        ],
+        [
+            0002, dialog_broc_normal, "0001"
+        ],
+    ];
+	dict_dialog_normal = ds_grid_create_from_array(dict_dialog_normal_array);
+	#endregion
+	
+	npc_bookmark = ds_list_create();
+	npc_bookmark[| NPCBookmark.cornovich] = 0001;
+	npc_bookmark[| NPCBookmark.broc] = 0001;
+}

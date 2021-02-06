@@ -45,7 +45,6 @@
     {"id":{"name":"stsBase01","path":"sprites/stsBase01/stsBase01.yy",},"order":4,},
     {"id":{"name":"sBP_inventory_stats","path":"sprites/sBP_inventory_stats/sBP_inventory_stats.yy",},"order":7,},
     {"id":{"name":"room_debug_battle","path":"rooms/room_debug_battle/room_debug_battle.yy",},"order":4,},
-    {"id":{"name":"Flags_toberemoved","path":"scripts/Flags_toberemoved/Flags_toberemoved.yy",},"order":3,},
     {"id":{"name":"room_debug","path":"rooms/room_debug/room_debug.yy",},"order":2,},
     {"id":{"name":"sBattleUI_attack","path":"sprites/sBattleUI_attack/sBattleUI_attack.yy",},"order":0,},
     {"id":{"name":"sApple01_walk","path":"sprites/sApple01_walk/sApple01_walk.yy",},"order":5,},

@@ -7,7 +7,14 @@ function build_globals(){
 	globalvar paused;				paused = false;
 	globalvar debugMode;			debugMode = false;
 	globalvar noclipMode;			noclipMode = false;
-	//----------------------------------------Dictionaries
+	//----------------------------------------Dialog & Quest System
+	globalvar npc_bookmark;
+	globalvar npc_state_corn; npc_state_corn = NPCState.normal;
+	globalvar npc_state_broc; npc_state_broc = NPCState.normal;
+	globalvar dict_dialog_normal;
+	globalvar dialog_corn_normal;
+	globalvar dialog_broc_normal;
+	//----------------------------------------Dictionaries	
 	globalvar dict_items;
 	globalvar dict_enemies;
 	globalvar dict_quests;

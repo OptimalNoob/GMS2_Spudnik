@@ -10,10 +10,10 @@ enum update_quest{		// Triggering Quest Updates
 	complete
 };
 
-enum npc_flag{			// Accessing NPC Flags
-	cornovich,
-	broc
-};
+//enum npc_flag{			// Accessing NPC Flags
+//	cornovich,
+//	broc
+//};
 
 enum dic_q{				// Accessing Quest Dictionary
 	ID,
@@ -50,7 +50,30 @@ enum dic_i{				// Accessing Item Dictionary
 	SPEED,
 };
 
-enum D_STATE{				// Accessing NPC Dialog State
-	NPC,
-	STATE
-};
+//enum D_STATE{				// Accessing NPC Dialog State
+//	NPC,
+//	STATE
+//};
+
+enum DialogNormal{			// Columns for Master Normal Dialog Grid
+	npcID,
+	npcDict,
+	npcBookmark
+}
+	
+enum NPCDialogNormal{		// Columns for NPC Normal Dialog Grid
+	npcBookmark,
+	npcDialogArray,
+	npcLinkedBookmark
+}
+
+enum NPCBookmark{			// Used for accessing ds_list 'npc_bookmark'
+	cornovich,
+	broc,
+}
+
+enum NPCState{
+	normal,
+	givequest,
+	completequest
+}

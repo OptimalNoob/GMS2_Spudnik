@@ -1,6 +1,13 @@
 /// @desc
+
+//npc_state = npc_state_broc;
+//npcID = 0001;
+//name = "broc"
+//type = "shop";
+//bookmark = NPCBookmark.cornovich
+
 if(speaking){
-	var npc_name = speaker_name;
+	var npc_name = name;
 	var text_x = win_midX - textbox_width / 2 + 40;
 	var text_y = windowHeight - textbox_height + 16;
 	draw_sprite(sDBox_message,0,win_midX, windowHeight - 32);	

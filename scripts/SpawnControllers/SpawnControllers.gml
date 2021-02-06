@@ -4,11 +4,12 @@ function create_dialog(_npc){
 	};
 	if(instance_exists(DialogController)){
 		with (DialogController){
-			speaker_name = _npc.name;
-			speaker_text_flag = npc_flags[|_npc.flag_id];
-			speaker_type = _npc.type;
-			speaker_id = _npc;
-			ds_grid_copy(DialogController.dialog_library,_npc.dialog);	
+			npc_instance = _npc;
+			npc_state = _npc.npc_state;
+			npcID = _npc.npcID;
+			name = _npc.name;
+			type = _npc.type;
+			bookmark = _npc.bookmark;
 		};	
 	};
 };

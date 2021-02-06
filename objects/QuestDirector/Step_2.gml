@@ -11,7 +11,6 @@ if(check_listeners()){
 	};
 };
 
-
 //reset global listeners at end of frame
 listenerWarp = undefined
 listenerTalk = undefined

@@ -1,9 +1,16 @@
 /// @desc
-speaker_name = "";
-speaker_text_flag = 0;
-speaker_type = "";
-speaker_id = 0;
-dialog_library = ds_grid_create(9,9);
+npc_state = npc_state_broc;
+npcID = 0001;
+name = "broc"
+type = "shop";
+bookmark = NPCBookmark.cornovich
+npc_instance = 0;
+
+//speaker_name = "";
+//speaker_text_flag = 0;
+//speaker_type = "";
+//speaker_id = 0;
+//dialog_library = ds_grid_create(9,9);
 speaking = false;
 text_out = "";
 current_line = 0;
