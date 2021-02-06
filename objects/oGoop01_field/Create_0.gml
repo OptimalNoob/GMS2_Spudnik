@@ -4,6 +4,8 @@
 path = path_add();
 range = 80;
 my_speed = 0.8;
+pause_speed = 0;
+regular_speed = 0.8;
 path_found = 0;
 parent_spawner = 0;
 return_home = false;

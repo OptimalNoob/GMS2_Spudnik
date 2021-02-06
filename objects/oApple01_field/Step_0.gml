@@ -1,4 +1,5 @@
 /// @desc
+event_inherited();
 
 // Detect Player and begin chase
 var target = collision_ellipse(x - range,y - range / 2, x + range, y + range / 2,oSpud,0,0)
