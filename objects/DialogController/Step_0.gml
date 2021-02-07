@@ -1,15 +1,9 @@
 /// @desc
 get_player_input();
 
-//npc_state = npc_state_broc;
-//npcID = 0001;
-//name = "broc"
-//type = "shop";
-//bookmark = NPCBookmark.cornovich
-
 var dict_h = ds_grid_height(dict_dialog_normal)-1
 var dict_row = ds_grid_value_y(dict_dialog_normal, DialogNormal.npcID, 0, DialogNormal.npcID, dict_h, npcID)
-var npc_bm = npc_bookmark[| bookmark] - 1
+var npc_bm = npc_bookmark[| bookmark] - 1;
 var link_bm = dict_dialog_normal[# DialogNormal.npcDict, dict_row][# NPCDialogNormal.npcLinkedBookmark, npc_bm];
 
 //if(keyboard_check_pressed(ord("E"))){

@@ -3,14 +3,15 @@ function build_globals(){
 	globalvar camX;					camX = 0;
 	globalvar camY;					camY = 0;
 	globalvar camera_1;				camera_1 = camera_create();
-	//----------------------------------------System
+	//----------------------------------------System / Debug
 	globalvar paused;				paused = false;
+	globalvar saveslot;
 	globalvar debugMode;			debugMode = false;
 	globalvar noclipMode;			noclipMode = false;
+	globalvar loadroom;
 	//----------------------------------------Dialog & Quest System
-	globalvar npc_bookmark;
-	globalvar npc_state_corn; npc_state_corn = NPCState.normal;
-	globalvar npc_state_broc; npc_state_broc = NPCState.normal;
+	globalvar npc_bookmark;		npc_bookmark = ds_list_create();
+	globalvar npc_states;		npc_states = ds_list_create();
 	globalvar dict_dialog_normal;
 	globalvar dialog_corn_normal;
 	globalvar dialog_broc_normal;
@@ -18,6 +19,8 @@ function build_globals(){
 	globalvar dict_items;
 	globalvar dict_enemies;
 	globalvar dict_quests;
+	globalvar dict_dialog_corn;
+	globalvar dict_dialog_broc;
 	//----------------------------------------BattleSystem
 	globalvar battle_spawn_table;	battle_spawn_table = ds_list_create();
 	globalvar battle_room_prev;		battle_room_prev = 0;
@@ -28,21 +31,16 @@ function build_globals(){
     globalvar listenerPurchase;		listenerItemUse = undefined
     globalvar listenerItemUse;		listenerBattle = ds_list_create();
 	//----------------------------------------Player
-	globalvar spud_hp;				spud_hp = 250;
-	globalvar spud_max_hp;			spud_atk = 999;
-	globalvar spud_atk;				spud_max_hp = 1000;
-	globalvar spud_money;			spud_money = 1000;
-	globalvar spud_spawn_x;			spud_spawn_x = 328;
-	globalvar spud_spawn_y;			spud_spawn_y = 288;
+	globalvar spud_hp;
+	globalvar spud_max_hp;
+	globalvar spud_atk;
+	globalvar spud_money;
+	globalvar spud_spawn_x;
+	globalvar spud_spawn_y;
 	globalvar spud_quests;			spud_quests = ds_list_create();
 	globalvar player_inventory;		player_inventory = ds_list_create();
-	ds_list_add(player_inventory, "i_0001","i_0001","i_0004");
-	//----------------------------------------Flags (TO BE REMOVED)
-	globalvar npc_flags;			npc_flags = ds_list_create();
 	//----------------------------------------State Machine
 	globalvar state_quests;
-	globalvar dict_dialog_corn;
-	globalvar dict_dialog_broc;
 };
 
 function set_display(){

@@ -41,8 +41,4 @@ function build_dict_dialog(){
     ];
 	dict_dialog_normal = ds_grid_create_from_array(dict_dialog_normal_array);
 	#endregion
-	
-	npc_bookmark = ds_list_create();
-	npc_bookmark[| NPCBookmark.cornovich] = 0001;
-	npc_bookmark[| NPCBookmark.broc] = 0001;
 }

@@ -1,6 +1,6 @@
 /// @desc
 
-scale = 5;
+scale = 4;
 wW = windowWidth;
 wH = windowHeight;
 x_min = (wW / scale) / 2;
@@ -27,5 +27,5 @@ camera_set_proj_mat(camera_1,pm);
 view_camera[0] = camera_1;
 view_enabled[0] = true;
 view_visible[0] = true;
-view_wport[0] = windowWidth;
-view_hport[0] = windowHeight;
+//view_wport[0] = windowWidth;
+//view_hport[0] = windowHeight;

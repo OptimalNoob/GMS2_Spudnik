@@ -1,9 +1,9 @@
 /// @desc
-npc_state = npc_state_broc;
+npc_state = npc_states[|NPCList.cornovich];
 npcID = 0001;
-name = "broc"
+name = "corn"
 type = "shop";
-bookmark = NPCBookmark.cornovich
+bookmark = npc_bookmark[| NPCList.cornovich];
 npc_instance = 0;
 
 //speaker_name = "";

@@ -10,7 +10,7 @@ y_max = room_height - y_min;
 //camX = 0;
 //camY = 0;
 follow_speed = 20;
-surface_resize(application_surface,1280,720);
+surface_resize(application_surface,windowWidth,windowHeight);
 display_set_gui_size(wW, wH);
 
 follow = oSpud;
@@ -27,5 +27,5 @@ camera_set_proj_mat(camera_1,pm);
 view_camera[0] = camera_1;
 view_enabled[0] = true;
 view_visible[0] = true;
-//view_wport[0] = windowWidth;
-//view_hport[0] = windowHeight;
+view_wport[0] = windowWidth;
+view_hport[0] = windowHeight;

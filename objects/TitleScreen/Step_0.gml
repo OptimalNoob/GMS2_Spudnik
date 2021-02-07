@@ -26,11 +26,21 @@ if(!pre_title){
 	if(input_UP) button_sel = max(0, --button_sel);
 	if(input_ACTION1){
 		switch (button_sel){
-			case 0: room_goto(room_init); break;
-			case 1: break;
-			case 2: break;
+			case 0:
+				gamechoice = gameChoice.newgame;
+				room_goto(room_init);
+				break;
+			case 1:
+				gamechoice = gameChoice.contgame;
+				room_goto(room_init);
+				break;
+			case 2: 
+				gamechoice = gameChoice.loadgame;
+				break;
 			case 3: break;
-			case 4: game_end(); break;
+			case 4:
+				game_end();
+				break;
 		};
 	};
 };

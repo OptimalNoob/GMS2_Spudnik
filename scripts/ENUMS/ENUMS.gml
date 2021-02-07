@@ -2,18 +2,13 @@ enum sprite_lib{		// Accessing Sprite Libraries
 	idle,
 	attacking,
 	damaged
-};
+}
 
 enum update_quest{		// Triggering Quest Updates
 	activate,
 	update,
 	complete
-};
-
-//enum npc_flag{			// Accessing NPC Flags
-//	cornovich,
-//	broc
-//};
+}
 
 enum dic_q{				// Accessing Quest Dictionary
 	ID,
@@ -22,7 +17,7 @@ enum dic_q{				// Accessing Quest Dictionary
 	DESC,
 	OFLAG,
 	ONAME
-};
+}
 
 enum dic_e{				// Accessing Enemy Dictionary
 	ID,
@@ -35,7 +30,7 @@ enum dic_e{				// Accessing Enemy Dictionary
 	SPD,
 	OBJS,
 	OBJB
-};
+}
 
 enum dic_i{				// Accessing Item Dictionary
 	ID,
@@ -48,12 +43,7 @@ enum dic_i{				// Accessing Item Dictionary
 	HEAL,
 	STRENGTH,
 	SPEED,
-};
-
-//enum D_STATE{				// Accessing NPC Dialog State
-//	NPC,
-//	STATE
-//};
+}
 
 enum DialogNormal{			// Columns for Master Normal Dialog Grid
 	npcID,
@@ -67,13 +57,29 @@ enum NPCDialogNormal{		// Columns for NPC Normal Dialog Grid
 	npcLinkedBookmark
 }
 
-enum NPCBookmark{			// Used for accessing ds_list 'npc_bookmark'
+enum NPCList{			// Used for accessing ds_list 'npc_bookmark'
 	cornovich,
 	broc,
 }
 
-enum NPCState{
+enum NPCState{				// Used for controlling NPC Dialog and Quests
 	normal,
 	givequest,
 	completequest
+}
+
+enum backpackMenu {			// Used for accessing Backpack submenus
+	inventory,
+	party,
+	quests,
+	journal,
+	settings,
+	quit
+}
+
+enum gameChoice{
+	newgame,
+	contgame,
+	loadgame,
+	loading
 }
