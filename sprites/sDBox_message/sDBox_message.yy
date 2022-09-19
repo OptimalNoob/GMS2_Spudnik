@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMSprite",
+  "resourceVersion": "1.0",
+  "name": "sDBox_message",
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
@@ -24,12 +27,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f63a6daa-993c-46d3-a1b5-e3da9913ce4a","path":"sprites/sDBox_message/sDBox_message.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f63a6daa-993c-46d3-a1b5-e3da9913ce4a","path":"sprites/sDBox_message/sDBox_message.yy",},"LayerId":{"name":"d1ef6632-eeec-4605-a187-b96df990d00f","path":"sprites/sDBox_message/sDBox_message.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sDBox_message","path":"sprites/sDBox_message/sDBox_message.yy",},"resourceVersion":"1.0","name":"f63a6daa-993c-46d3-a1b5-e3da9913ce4a","tags":[],"resourceType":"GMSpriteFrame",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"f63a6daa-993c-46d3-a1b5-e3da9913ce4a",},
   ],
   "sequence": {
-    "spriteId": {"name":"sDBox_message","path":"sprites/sDBox_message/sDBox_message.yy",},
+    "resourceType": "GMSequence",
+    "resourceVersion": "1.4",
+    "name": "sDBox_message",
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -40,9 +43,9 @@
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
-      {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
+      {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"e517a1e7-1a0e-49fa-87a7-6254093ed463","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f63a6daa-993c-46d3-a1b5-e3da9913ce4a","path":"sprites/sDBox_message/sDBox_message.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
+          ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,
     "lockOrigin": false,
@@ -58,21 +61,13 @@
     "yorigin": 256,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sDBox_message","path":"sprites/sDBox_message/sDBox_message.yy",},
-    "resourceVersion": "1.3",
-    "name": "sDBox_message",
-    "tags": [],
-    "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d1ef6632-eeec-4605-a187-b96df990d00f","tags":[],"resourceType":"GMImageLayer",},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d1ef6632-eeec-4605-a187-b96df990d00f","visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "DialogBox",
     "path": "folders/Sprites/DialogBox.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "sDBox_message",
-  "tags": [],
-  "resourceType": "GMSprite",
 }

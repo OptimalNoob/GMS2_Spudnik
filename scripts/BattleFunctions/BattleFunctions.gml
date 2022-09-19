@@ -69,8 +69,8 @@ function playerturn(){
 			oSpud_battle.image_index = 0;
 			player_attack_reg();
 		}
-	};
-};
+	}
+}
 #endregion
 
 #region BATTLE SUBMENU CONTROLS
@@ -110,12 +110,12 @@ function attack_menu(){
 		player_attack_reg();
 		player_attacked = true;
 		reset_selections();
-	};
+	}
 	if(input_ACTION2){
-		player_attack_reg();
-		player_attacked = true;
-		reset_selections();
-	};
+		//player_attack_reg();
+		//player_attacked = true;
+		//reset_selections();
+	}
 };
 
 function command_menu(){
@@ -174,7 +174,7 @@ function use_battle_item(_itemid) {
 					inv_sel_item--;	
 				} else {
 					inv_sel_item = 0;
-				};
+				}
 				alarm[0] = 2;
 				current_turn = turn.enemy;
 				reset_selections();

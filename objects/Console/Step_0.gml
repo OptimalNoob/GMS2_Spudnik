@@ -13,11 +13,11 @@ if (keyboard_check_pressed(vk_enter)) {
 			debugMode = !debugMode;
 			ds_list_insert(inputLog,0,"Debug Mode: " + string(debugMode));
 			break;
-		case "restart":
+		case "reload":
 			paused = false;
 			room_restart();
 			break;
-		case "reload":
+		case "restart":
 			game_restart();
 			break;
 		case "noclip":

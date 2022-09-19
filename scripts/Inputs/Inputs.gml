@@ -1,3 +1,4 @@
+string
 function build_inputs(){
 	globalvar input_UP;
 	globalvar input_DOWN;
